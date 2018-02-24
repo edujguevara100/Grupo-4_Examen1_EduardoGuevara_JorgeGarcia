@@ -93,25 +93,23 @@ bool Serpiente::Muerte(string**& tablero){
 					return true;
 				}else if(j == 12 || j == 0){
 					return true;
-				}else if(){
-					for(int i = 0; i < cuerpo.size(); i++){
-			string corden = cuerpo[i];
-			string delimiter = "-";
-			string y,x;
-			y = corden.substr(0,corden.find(delimiter));
-			x = corden.substr(corden.find(delimiter)+1,corden.length()-1);
-			int cord_x,cord_y;
-			cord_x = atoi(x.c_str());
-			cord_y = atoi(y.c_str());
-			if(i != cuerpo.size()-1){
-				tablero[cord_y][cord_x] = "c ";
-			}else{
-				tablero[cord_y][cord_x] = "C ";
-			}
-		}			
-				}
 				}else{
-					return false;
+					for(int i = 0; i < cuerpo.size(); i++){
+						string corden = cuerpo[i];
+						string delimiter = "-";
+						string y,x;
+						y = corden.substr(0,corden.find(delimiter));
+						x = corden.substr(corden.find(delimiter)+1,corden.length()-1);
+						int cord_x,cord_y;
+						cord_x = atoi(x.c_str());
+						cord_y = atoi(y.c_str());
+						if(i != cuerpo.size()-1){
+							tablero[cord_y][cord_x] = "c ";
+						}else{
+							tablero[cord_y][cord_x] = "C ";
+						}
+					}	
+					return false;		
 				}
 			}
 		}
